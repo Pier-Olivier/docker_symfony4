@@ -1,3 +1,8 @@
 /base/
 /log/
 /redis/
+
+/code/the_spacebar/.env
+/code/the_spacebar/public/bundles/
+/code/the_spacebar/var/
+/code/the_spacebar/vendor/
