@@ -1,0 +1,37 @@
+version: '2'
+
+services:
+
+    basic_nginx:
+        image: nginx:1.13
+        volumes:
+            - ../code:/code
+            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+            - ../log/nginx:/var/log/nginx
+        ports:
+            - 8000:80
+
+    basic_redis:
+        image: redis:4.0
+        volumes:
+            - ../redis:/data
+            - ./redis/redis.conf:/etc/redis/redis.conf:ro
+
+    basic_mariaDB:
+        image: mariadb:10.3
+        ports:
+          - 8001:3306
+        volumes:
+          - ../base:/var/lib/mysql
+        environment:
+          MYSQL_ROOT_PASSWORD: "123456"
+
+    basic_php:
+        build: 
+            context: ./php
+        volumes:
+            - ../code:/code
+            - ./php/php.ini:/usr/local/etc/php/php.ini:ro
+            - ../log/php/php_error.log:/var/log/php_error.log
+
+
