@@ -2,7 +2,7 @@ version: '2'
 
 services:
 
-    basic_nginx:
+    symfony4_nginx:
         image: nginx:1.13
         volumes:
             - ../code:/code
@@ -11,13 +11,13 @@ services:
         ports:
             - 8000:80
 
-    basic_redis:
+    symfony4_redis:
         image: redis:4.0
         volumes:
             - ../redis:/data
             - ./redis/redis.conf:/etc/redis/redis.conf:ro
 
-    basic_mariaDB:
+    symfony4_mariaDB:
         image: mariadb:10.3
         ports:
           - 8001:3306
@@ -26,7 +26,7 @@ services:
         environment:
           MYSQL_ROOT_PASSWORD: "123456"
 
-    basic_php:
+    symfony4_php:
         build: 
             context: ./php
         volumes:
