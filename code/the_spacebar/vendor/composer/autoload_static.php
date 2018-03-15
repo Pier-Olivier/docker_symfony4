@@ -29,6 +29,7 @@ class ComposerStaticInitf6080bbfd7484735bbd573bdba37ce9e
             'Symfony\\Component\\Config\\' => 25,
             'Symfony\\Component\\Cache\\' => 24,
             'Symfony\\Bundle\\FrameworkBundle\\' => 31,
+            'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
         ),
         'P' => 
         array (
@@ -36,6 +37,13 @@ class ComposerStaticInitf6080bbfd7484735bbd573bdba37ce9e
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
+        ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Inflector\\' => 26,
+            'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\Annotations\\' => 28,
+            'Doctrine\\Common\\' => 16,
         ),
         'A' => 
         array (
@@ -109,6 +117,10 @@ class ComposerStaticInitf6080bbfd7484735bbd573bdba37ce9e
         array (
             0 => __DIR__ . '/..' . '/symfony/framework-bundle',
         ),
+        'Sensio\\Bundle\\FrameworkExtraBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sensio/framework-extra-bundle',
+        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -125,6 +137,22 @@ class ComposerStaticInitf6080bbfd7484735bbd573bdba37ce9e
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
+        'Doctrine\\Common\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
+        ),
+        'Doctrine\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+        ),
         'App\\Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
@@ -135,11 +163,26 @@ class ComposerStaticInitf6080bbfd7484735bbd573bdba37ce9e
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'D' => 
+        array (
+            'Doctrine\\Common\\Lexer\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
+            ),
+            'Doctrine\\Common\\Collections\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/collections/lib',
+            ),
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitf6080bbfd7484735bbd573bdba37ce9e::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitf6080bbfd7484735bbd573bdba37ce9e::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitf6080bbfd7484735bbd573bdba37ce9e::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }
