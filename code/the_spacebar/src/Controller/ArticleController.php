@@ -20,6 +20,9 @@ class ArticleController extends AbstractController
      */
     public function news($slug)
     {
+        $oTest  = new \nabucco\Test();
+        $sTest = $oTest->variable();
+
         $comments = [
             'I ate a normal rock once. It did NOT taste like bacon!',
             'Woohoo! I\'m going on an all-asteroid diet!',
@@ -30,7 +33,8 @@ class ArticleController extends AbstractController
             'article/show.html.twig',
             [
                 'title' => ucwords(str_replace('-', ' ', $slug)),
-                'comments' => $comments
+                'comments' => $comments,
+                'test'  => $sTest
             ]
 
         );
