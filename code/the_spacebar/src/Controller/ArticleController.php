@@ -20,8 +20,8 @@ class ArticleController extends AbstractController
      */
     public function news($slug)
     {
-        $oTest  = new \nabucco\Test();
-        $sTest = $oTest->variable();
+        $oM = new \nabucco\Morpheus('zlink');
+        $oT = $oM->select(0);
 
         $comments = [
             'I ate a normal rock once. It did NOT taste like bacon!',
@@ -34,7 +34,7 @@ class ArticleController extends AbstractController
             [
                 'title' => ucwords(str_replace('-', ' ', $slug)),
                 'comments' => $comments,
-                'test'  => $sTest
+                'test'  => $oT->source()
             ]
 
         );

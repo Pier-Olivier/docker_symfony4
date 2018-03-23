@@ -7,7 +7,6 @@ trait TraitBDD {
 
     public function genererPDO()
     {
-///        $oBaze = new \PDO(\BASE_ADR, \BASE_LOG, \BASE_PWD, array(\PDO::ATTR_PERSISTENT=>TRUE));
         $oBaze = new \PDO(\BASE_ADR, \BASE_LOG, \BASE_PWD);
 
         $oBaze->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
@@ -23,7 +22,6 @@ trait TraitBDD {
 
     static function static_get_BDD()
     {
-///        $oBaze = new \PDO(\BASE_ADR, \BASE_LOG, \BASE_PWD, array(\PDO::ATTR_PERSISTENT=>TRUE));
         $oBaze = new \PDO(\BASE_ADR, \BASE_LOG, \BASE_PWD);
 
         $oBaze->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);

@@ -5,7 +5,12 @@ use Symfony\Component\Debug\Debug;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpFoundation\Request;
 
-include '../vendor/nabucco/Test.php';
+define('CHEMIN', '..' . DIRECTORY_SEPARATOR);
+include '../vendor' . DIRECTORY_SEPARATOR . 'autoloader_po.php';
+spl_autoload_register('Autoloader_po::loader');
+
+include 'config.php';
+
 require __DIR__.'/../vendor/autoload.php';
 
 // The check is to ensure we don't use .env in production
