@@ -20,7 +20,3 @@ RUN docker-php-ext-install pdo_mysql \
     && apt-get autoremove -y \
     && rm -fr /tmp/* \
     && rm -fr /vat/lib/{apt,dkpg,cache,log,tmp}/*
-
-    #WORKDIR /code/composer
-
-    #CMD composer install -q
