@@ -19,8 +19,9 @@ port on your host : 8001 passeword : 123456
 --------------------------------------------------------------
 
 * to get a new skeleton
-* cd {PAHT}/docker_symfony4/code
+* docker exec -it docker_symfony4_php_1 /bin/bash
+* cd /code
 
 composer self-update
 
-composer create-project symfony/skeleton the_spacebar
+composer create-project symfony/skeleton [MON PROJET]
